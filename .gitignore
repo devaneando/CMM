@@ -1,0 +1,9 @@
+/.env.local
+/.env.*.local
+.phpunit
+/phpunit.xml
+/public/bundles/
+/var/*
+!/var/.gitkeep
+/vendor/
+/.web-server-pid
