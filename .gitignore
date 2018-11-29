@@ -1,9 +1,11 @@
-/.env.local
-/.env.*.local
 .phpunit
+/.env.*.local
+/.env.local
+/.web-server-pid
 /phpunit.xml
 /public/bundles/
+/public/members/pictures/*
+!/public/members/pictures/.gitkeep
 /var/*
 !/var/.gitkeep
 /vendor/
-/.web-server-pid
