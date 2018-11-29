@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Helper;
+namespace App\Helper\Validator;
 
 /**
  * Validates the constants of a class.

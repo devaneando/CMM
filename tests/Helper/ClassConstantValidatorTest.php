@@ -2,7 +2,7 @@
 
 namespace App\Tests\Helper;
 
-use App\Helper\ClassConstantValidator;
+use App\Helper\Validator\ClassConstantValidator;
 use App\Tests\Resources\ClassConstant;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
