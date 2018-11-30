@@ -29,7 +29,7 @@ trait NameTrait
      *
      * @return self
      */
-    public function setName(string $name)
+    public function setName($name)
     {
         $this->name = trim($name);
 
