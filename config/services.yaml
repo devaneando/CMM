@@ -22,5 +22,13 @@ services:
         resource: '../src/Controller'
         tags: ['controller.service_arguments']
 
+    App\DataFixtures\:
+        resource: '../src/DataFixtures'
+        calls:
+            - method: setContainer
+              arguments:
+                - '@service_container'
+        tags: ['doctrine.fixture.orm']
+
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
