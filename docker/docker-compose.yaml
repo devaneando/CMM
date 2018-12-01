@@ -1,0 +1,7 @@
+version: '3'
+services:
+  maildev:
+    ports:
+     - "1080:80"
+     - "1025:25"
+    image: "djfarrelly/maildev"
