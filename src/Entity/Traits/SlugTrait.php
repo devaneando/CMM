@@ -40,6 +40,7 @@ trait SlugTrait
     public function setName($name)
     {
         $this->name = trim($name);
+        $this->setSlug();
 
         return $this;
     }
@@ -70,5 +71,22 @@ trait SlugTrait
         }
 
         return $this->getName();
+    }
+
+    /**
+     * @ORM\PrePersist()
+     */
+    public function onPrePersistSlug()
+    {
+        $this
+            ->setSlug();
+    }
+
+    /**
+     * @ORM\PreUpdate()
+     */
+    public function onPreUpdateSlug()
+    {
+        $this->setSlug();
     }
 }

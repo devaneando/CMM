@@ -10,6 +10,7 @@ use FOS\UserBundle\Model\Group as FosGroup;
 /**
  * @ORM\Entity(repositoryClass="App\Entity\Repository\GroupRepository")
  * @ORM\Table(name="groups")
+ * @ORM\HasLifecycleCallbacks()
  */
 class Group extends FosGroup
 {

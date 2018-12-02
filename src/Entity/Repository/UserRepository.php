@@ -2,6 +2,8 @@
 
 namespace App\Entity\Repository;
 
+use App\Entity\Repository\Traits\NameTrait;
+use App\Entity\Repository\Traits\SlugTrait;
 use App\Entity\User;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
@@ -14,6 +16,9 @@ use Symfony\Bridge\Doctrine\RegistryInterface;
  */
 class UserRepository extends ServiceEntityRepository
 {
+    use NameTrait;
+    use SlugTrait;
+
     public function __construct(RegistryInterface $registry)
     {
         parent::__construct($registry, User::class);

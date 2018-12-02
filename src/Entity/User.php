@@ -10,6 +10,7 @@ use FOS\UserBundle\Model\User as FosUser;
 /**
  * @ORM\Entity(repositoryClass="App\Entity\Repository\UserRepository")
  * @ORM\Table(name="users")
+ * @ORM\HasLifecycleCallbacks()
  */
 class User extends FosUser
 {
@@ -37,6 +38,8 @@ class User extends FosUser
     public function __construct()
     {
         parent::__construct();
-        $this->setEnabled(true);
+        $this
+            ->setEnabled(true)
+            ->setSlug();
     }
 }

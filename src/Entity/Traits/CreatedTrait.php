@@ -23,7 +23,7 @@ trait CreatedTrait
     /**
      * @var bool
      *
-     * @ORM\Column(name="enabled", type="boolean")
+     * @ORM\Column(name="enabled", type="boolean", nullable=true)
      */
     protected $enabled;
 
@@ -86,17 +86,19 @@ trait CreatedTrait
     /**
      * @ORM\PrePersist()
      */
-    public function onPrePersist()
+    public function onPrePersistCreated()
     {
         if (null === $this->createdAt) {
-            $this->setCreatedAt();
+            $this
+                ->setCreatedAt()
+                ->setEnabled(true);
         }
     }
 
     /**
      * @ORM\PreUpdate()
      */
-    public function onPreUpdate()
+    public function onPreUpdateCreated()
     {
         $this->setUpdatedAt();
     }
