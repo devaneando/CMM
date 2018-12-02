@@ -2,9 +2,12 @@
 
 namespace App\Entity;
 
+use App\Entity\Group;
 use App\Entity\Traits\CreatedTrait;
 use App\Entity\Traits\SlugTrait;
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use FOS\UserBundle\Model\Group as FosGroup;
 use FOS\UserBundle\Model\User as FosUser;
 
 /**
@@ -24,6 +27,8 @@ class User extends FosUser
     protected $id;
 
     /**
+     * @var ArrayCollection
+     *
      * @ORM\ManyToMany(targetEntity="App\Entity\Group", mappedBy="users", cascade="all")
      * @ORM\JoinTable(name="users_groups",
      *      joinColumns={@ORM\JoinColumn(name="user_id", referencedColumnName="id")},
@@ -38,6 +43,7 @@ class User extends FosUser
     public function __construct()
     {
         parent::__construct();
+        $this->groups = new ArrayCollection();
         $this
             ->setEnabled(true)
             ->setSlug();

@@ -75,19 +75,10 @@ abstract class AbstractDataFixture extends AbstractFixture implements ContainerA
     /**
      * Get the value of data.
      *
-     * @param string $fileName The name of the file with the data
-     *
-     * @throws UnexistentFile
-     * @throws InvalidFile
-     *
      * @return array
      */
-    public function getData(string $fileName = '')
+    public function getData()
     {
-        if (true === empty($fileName)) {
-            $this->loadData($fileName);
-        }
-
         return $this->data;
     }
 
@@ -136,6 +127,8 @@ abstract class AbstractDataFixture extends AbstractFixture implements ContainerA
             throw new UnexistentFile();
         }
 
-        return Yaml::parseFile($resourceFile);
+        if (file_exists($resourceFile)) {
+            return Yaml::parseFile($resourceFile);
+        }
     }
 }

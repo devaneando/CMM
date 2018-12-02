@@ -5,7 +5,6 @@ namespace App\DataFixtures;
 use App\DataFixtures\AbstractDataFixture;
 use App\Entity\Group;
 use Doctrine\Common\Persistence\ObjectManager;
-use FOS\UserBundle\Doctrine\UserManager;
 
 class GroupFixtures extends AbstractDataFixture
 {
@@ -22,15 +21,17 @@ class GroupFixtures extends AbstractDataFixture
      */
     public function load(ObjectManager $manager)
     {
-        $this->setData($this->loadData('groups.yaml'));
+        $data = $this->loadData('groups.yaml');
+        $this->setData($data);
 
-        foreach ($this->data as $item) {
+        foreach ($this->getData() as $item) {
             $group = new Group(
                 $item['name'],
                 $item['roles']
             );
             $manager->persist($group);
             $manager->flush();
+            $this->setReference('group_'.$group->getSlug(), $group);
             $this->stepIt();
         }
     }

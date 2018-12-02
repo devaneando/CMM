@@ -2,8 +2,10 @@
 
 namespace App\Entity;
 
+use App\Entity\Group;
 use App\Entity\Traits\CreatedTrait;
 use App\Entity\Traits\SlugTrait;
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use FOS\UserBundle\Model\Group as FosGroup;
 
