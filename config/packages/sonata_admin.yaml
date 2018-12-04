@@ -1,13 +1,25 @@
 sonata_admin:
-    title: 'Sonata Admin'
+    security:
+        handler: sonata.admin.security.handler.role
+    title: Church Members
+    title_logo: /static/images/logo.png
+    search: false
+    templates:
+        # Override default template
+        layout: sonata.html.twig
+    options:
+        title_mode: both
     dashboard:
         blocks:
             - { type: sonata.admin.block.admin_list, position: left }
+        groups:
+            settings:
+                label: Administrator
+                roles: []
+                icon: '<i class="fa fa-cog"></i>'
     assets:
         extra_stylesheets:
             - bundles/sonataadmin/vendor/admin-lte/dist/css/skins/skin-green.css
-
-sonata_block:
-    blocks:
-        sonata.admin.block.admin_list:
-            contexts: [admin]
+            - bundles/sonataadmin/vendor/admin-lte/dist/css/skins/skin-green.min.css
+        remove_stylesheets:
+            - bundles/sonataadmin/vendor/admin-lte/dist/css/skins/skin-black.min.css
