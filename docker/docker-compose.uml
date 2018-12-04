@@ -1,0 +1,4 @@
+FROM djfarrelly/maildev
+LABEL maintainer="Eduardo Fernandes"
+LABEL description="This is a general-purpose docker image with Apache and PHP 5"
+LABEL version="1.0.0"

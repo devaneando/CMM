@@ -1,0 +1,10 @@
+admin:
+    username: admin
+    email: admin@church-manager.com
+    name: O Administrador
+    password: test
+    superadmin: true
+    roles:
+        - ROLE_SUPER_ADMIN
+    groups:
+        - adminstradores

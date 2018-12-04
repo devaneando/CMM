@@ -1,6 +1,8 @@
 parameters:
     bootstrap: null
-    excludes_analyse: []
+    excludes_analyse: [
+        'src/Migrations'
+    ]
     autoload_directories: []
     autoload_files: []
     fileExtensions:

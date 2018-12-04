@@ -10,7 +10,7 @@ if (isset($_ENV['BOOTSTRAP_CLEAR_CACHE_ENV'])) {
             __DIR__,
             'cache:clear',
             $_ENV['BOOTSTRAP_CLEAR_CACHE_ENV'],
-            '--no-optional-warmers --no-warmup'
+            '--quiet --no-optional-warmers --no-warmup'
         )
     );
 }
@@ -23,7 +23,7 @@ if (isset($_ENV['BOOTSTRAP_SCHEMA_DROP_ENV'])) {
             __DIR__,
             'doctrine:schema:drop',
             $_ENV['BOOTSTRAP_SCHEMA_DROP_ENV'],
-            '--force'
+            '--quiet --force'
         )
     );
 }
@@ -36,7 +36,7 @@ if (isset($_ENV['BOOTSTRAP_SCHEMA_CREATE_ENV'])) {
             __DIR__,
             'doctrine:schema:create',
             $_ENV['BOOTSTRAP_SCHEMA_CREATE_ENV'],
-            ''
+            '--quiet '
         )
     );
 }
@@ -62,7 +62,7 @@ if (isset($_ENV['BOOTSTRAP_FIXTURES_LOAD_ENV'])) {
             __DIR__,
             'doctrine:fixtures:load',
             $_ENV['BOOTSTRAP_FIXTURES_LOAD_ENV'],
-            '--no-interaction'
+            '--no-debug --quiet --no-interaction'
         )
     );
 }

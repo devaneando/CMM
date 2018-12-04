@@ -1,0 +1,4 @@
+admins:
+    name: Administradores
+    roles:
+        - ROLE_SUPER_ADMIN
