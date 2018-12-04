@@ -20,9 +20,10 @@
         "symfony/console": "4.1.*",
         "symfony/flex": "^1.1",
         "symfony/framework-bundle": "4.1.*",
+        "symfony/monolog-bundle": "^3.3",
+        "symfony/swiftmailer-bundle": "^3.2",
         "symfony/templating": "4.1.*",
         "symfony/twig-bundle": "4.1.*",
-        "symfony/swiftmailer-bundle": "^3.2",
         "symfony/yaml": "4.1.*"
     },
     "require-dev": {
