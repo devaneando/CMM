@@ -12,6 +12,8 @@
         "doctrine/orm": "^2.6",
         "friendsofsymfony/user-bundle": "~2.0",
         "fzaninotto/faker": "^1.8",
+        "gedmo/doctrine-extensions": "^2.4",
+        "picoss/sonata-extra-admin-bundle": "^4.0",
         "sensio/framework-extra-bundle": "^5.2",
         "sonata-project/admin-bundle": "^3.41",
         "sonata-project/doctrine-orm-admin-bundle": "^3.6",
