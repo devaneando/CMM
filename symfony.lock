@@ -1,4 +1,10 @@
 {
+    "behat/transliterator": {
+        "version": "v1.2.0"
+    },
+    "gedmo/doctrine-extensions": {
+        "version": "v2.4.36"
+    },
     "knplabs/knp-menu": {
         "version": "2.3.0"
     },
@@ -7,6 +13,9 @@
     },
     "monolog/monolog": {
         "version": "1.24.0"
+    },
+    "picoss/sonata-extra-admin-bundle": {
+        "version": "4.0"
     },
     "sonata-project/admin-bundle": {
         "version": "3.31",

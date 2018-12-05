@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Login{% endblock %}
+
+{% block stylesheet %}
+    {{ parent() }}
+    <link rel = "stylesheet" type = "text/css" href = "/static/css/login.css" />
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <form class="form-signin" action="{{ path('user_login') }}" method="post">
+        <div>
+            <h2 class="form-signin-heading">Church Member Manager</h2>
+            {% if error %}
+                <div class="login-error">{{ 'login.failed-login'|trans }}</div>
+            {% endif %}
+            <label for="username" class="sr-only">{{ 'login.username'|trans}}</label>
+            <input type="text" id="username" name="_username" class="form-control" placeholder="{{ 'login.username'|trans}}" value="{{ last_username }}" required autofocus>
+            <label for="password" class="sr-only">{{ 'login.password'|trans}}</label>
+            <input type="password" id="password" name="_password" class="form-control" placeholder="{{ 'login.password'|trans}}" required>
+            </div>
+            <input type="hidden" name="_target_path" value="/" />
+            <button class="btn btn-lg btn-primary btn-block" type="submit">{{ 'login.login'|trans}}</button>
+        </form>
+    </div>
+{% endblock %}
