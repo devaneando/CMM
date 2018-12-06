@@ -1,0 +1,25 @@
+{% extends '@SonataAdmin/standard_layout.html.twig' %}
+
+{% block body_attributes -%}
+    class="sonata-bc skin-blue-light fixed
+    {% if app.request.cookies.get('sonata_sidebar_hide') -%}
+        sidebar-collapse
+    {%- endif -%}"
+{%- endblock -%}
+
+{% block side_bar_after_nav %}
+{% endblock %}
+
+{% block breadcrumb %}
+&nbsp;
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="/bundles/sonatacore/vendor/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript" src="/bundles/sonatacore/vendor/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+{% endblock %}

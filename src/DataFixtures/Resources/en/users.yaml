@@ -2,7 +2,7 @@ admin:
     username: admin
     email: admin@church-manager.com
     name: The Administator
-    password: test
+    password: admin
     superadmin: true
     roles:
         - ROLE_SUPER_ADMIN
