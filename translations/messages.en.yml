@@ -1,0 +1,4 @@
+login.failed-login: "The given password do not match the given username."
+login.username: Username
+login.password: Password
+login.login: Login

@@ -21,7 +21,7 @@ security:
             form_login:
                 login_path: user_login
                 check_path: user_login
-                default_target_path:  /cmm
+                default_target_path:  /cmm/dashboard
             logout:
                 path: user_logout
                 target: /
