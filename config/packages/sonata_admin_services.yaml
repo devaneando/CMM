@@ -1,0 +1,13 @@
+services:
+    app.sonata_admin.group:
+        class: App\Admin\GroupAdmin
+        arguments: [~, App\Entity\Group, SonataAdminBundle:CRUD]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: settings, label: Groups }
+        public: true
+    app.sonata_admin.user:
+        class: App\Admin\UserAdmin
+        arguments: [~, App\Entity\User, SonataAdminBundle:CRUD]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: settings, label: Users }
+        public: true

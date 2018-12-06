@@ -50,11 +50,17 @@
     "sonata-project/doctrine-orm-admin-bundle": {
         "version": "3.6.3"
     },
+    "sonata-project/easy-extends-bundle": {
+        "version": "2.5.0"
+    },
     "sonata-project/exporter": {
         "version": "1.9.1"
     },
     "sonata-project/intl-bundle": {
         "version": "2.5.0"
+    },
+    "sonata-project/user-bundle": {
+        "version": "4.2.3"
     },
     "symfony/asset": {
         "version": "v4.1.8"
