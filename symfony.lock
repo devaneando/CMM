@@ -56,11 +56,17 @@
     "sonata-project/exporter": {
         "version": "1.9.1"
     },
+    "sonata-project/google-authenticator": {
+        "version": "2.2.0"
+    },
     "sonata-project/intl-bundle": {
         "version": "2.5.0"
     },
     "sonata-project/user-bundle": {
         "version": "4.2.3"
+    },
+    "symfony/acl-bundle": {
+        "version": "v1.0.0"
     },
     "symfony/asset": {
         "version": "v4.1.8"

@@ -34,6 +34,12 @@ security:
         - { path: ^/user/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/user/logout$, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/user/login_check$, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/cmm, role: [ROLE_SUPER_ADMIN, ROLE_USER] }
-        - { path: ^/.*, role: [ROLE_SUPER_ADMIN, ROLE_USER] }
+        - { path: ^/cmm/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/cmm/logout$, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/cmm/login_check$, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/cmm/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/cmm/, role: [ROLE_ADMIN, ROLE_SONATA_ADMIN] }
+        - { path: ^/.*, role: [ROLE_ADMIN, ROLE_SONATA_ADMI] }
 
+acl:
+    connection: default
