@@ -30,3 +30,13 @@ bin/console doctrine:fixtures:load --no-interaction
 bin/console assetic:dump
 bin/console assets:install --symlink
 ```
+
+## Important
+
+CMM suffers from the [Symfony Issue #29347](https://github.com/symfony/symfony/issues/29347), and won't execute properly if you have the PHP OPCache extension enabled.
+
+Since, at least in Ubuntu and Linux Mint, the `php7.2-opcache` package is required by the `libapache2-mod-php7.2` package, the simplest workaround is to edit the `/etc/php/7.2/mods-available/opcache.ini` file and add the line below:
+
+```bash
+opcache.enable=0
+```

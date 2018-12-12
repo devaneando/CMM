@@ -4,5 +4,3 @@
 
 user_logout:
     path: /user/logout
-user_logout_cmm:
-    path: /cmm/user/logout
