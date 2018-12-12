@@ -1,0 +1,4 @@
+services:
+    App\Command\Test\DoSomethingCommand:
+        tags:
+            - { name: 'console.command', command: 'test:do-something' }

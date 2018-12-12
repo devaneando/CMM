@@ -1,8 +1,6 @@
 sonata_admin:
     security:
         handler: sonata.admin.security.handler.role
-        role_admin: ROLE_ADMIN
-        role_super_admin: ROLE_SUPER_ADMIN
     title: Church Members
     title_logo: /static/images/logo.png
     search: false
@@ -13,12 +11,20 @@ sonata_admin:
         title_mode: both
     dashboard:
         blocks:
-            - { type: sonata.admin.block.admin_list, position: left }
+            #- { position: left, type: sonata.admin.block.admin_list }
         groups:
-            settings:
-                label: Administrator
-                roles: []
+            sonata_user:
+                label: User management
+                roles: [ROLE_SUPER_ADMIN]
                 icon: '<i class="fa fa-cog"></i>'
+                items:
+                    - route: home
+            admin:
+                label: Admin
+                roles: [ROLE_SUPER_ADMIN]
+                icon: '<i class="fa fa-cog"></i>'
+                items:
+                    - route: home
     assets:
         extra_stylesheets:
             - bundles/sonataadmin/vendor/admin-lte/dist/css/skins/skin-green.css

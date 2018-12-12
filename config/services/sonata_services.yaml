@@ -1,0 +1,20 @@
+services:
+    Sonata\AdminBundle\Block\AdminListBlockService:
+        class: Sonata\AdminBundle\Block\AdminListBlockService
+        autowire: true
+        public: true
+
+
+    # sonata.admin.group:
+    #     class: App\Admin\GroupAdmin
+    #     arguments: [~, App\Entity\Group, ~]
+    #     tags:
+    #         - { name: sonata.admin, manager_type: orm, group: sonata_user, label: Group }
+    #     public: true
+
+    # sonata.admin.user:
+    #     class: App\Admin\UserAdmin
+    #     arguments: [~, App\Entity\User, ~]
+    #     tags:
+    #         - { name: sonata.admin, manager_type: orm, group: settings, label: User }
+    #     public: true

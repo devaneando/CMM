@@ -16,7 +16,7 @@ services:
 
     App\:
         resource: '../src/*'
-        exclude: '../src/{DependencyInjection,Entity,Migrations,Tests,Kernel.php}'
+        exclude: '../src/{Admin,DependencyInjection,Entity,Migrations,Tests,Kernel.php}'
 
     App\Entity\Repository\:
         resource: '../src/Entity/Repository/*'
