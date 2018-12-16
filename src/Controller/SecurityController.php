@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Traits\ExceptionLoggerTrait;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -14,6 +15,8 @@ class SecurityController extends Controller
 {
     /** @var AuthorizationChecker */
     private $securityContext;
+
+    use ExceptionLoggerTrait;
 
     public function __construct(AuthorizationCheckerInterface $authorizationChecker)
     {
@@ -49,19 +52,23 @@ class SecurityController extends Controller
      */
     public function loginAction(Request $request, AuthenticationUtils $authenticationUtils)
     {
-        if ($this->securityContext->isGranted('IS_AUTHENTICATED_FULLY')) {
-            return $this->redirectToRoute('sonata_admin_dashboard');
+        try {
+            if ($this->securityContext->isGranted('IS_AUTHENTICATED_FULLY')) {
+                return $this->redirectToRoute('sonata_admin_dashboard');
+            }
+
+            // get the login error if there is one
+            $error = $authenticationUtils->getLastAuthenticationError();
+
+            // last username entered by the user
+            $lastUsername = $authenticationUtils->getLastUsername();
+
+            return $this->render('security/login.html.twig', [
+                'last_username' => $lastUsername,
+                'error'         => $error,
+            ]);
+        } catch (\Exception $ex) {
+            $this->logException($ex);
         }
-
-        // get the login error if there is one
-        $error = $authenticationUtils->getLastAuthenticationError();
-
-        // last username entered by the user
-        $lastUsername = $authenticationUtils->getLastUsername();
-
-        return $this->render('security/login.html.twig', [
-            'last_username' => $lastUsername,
-            'error'         => $error,
-        ]);
     }
 }

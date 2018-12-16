@@ -4,13 +4,3 @@
 
 user_logout:
     path: /user/logout
-user_logout_cmm:
-    path: /cmm/user/logout
-
-sonata_user_admin_security:
-    resource: '@SonataUserBundle/Resources/config/routing/admin_security.xml'
-    prefix: /cmm
-
-sonata_user_admin_resetting:
-    resource: '@SonataUserBundle/Resources/config/routing/admin_resetting.xml'
-    prefix: /cmm/resetting

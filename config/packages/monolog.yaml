@@ -1,0 +1,9 @@
+monolog:
+    channels:
+        - 'exception'
+    handlers:
+        exception:
+            level: debug
+            type: stream
+            path: "%kernel.logs_dir%/%kernel.environment%.exceptions.log"
+            channels: [exception]
